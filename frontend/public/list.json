@@ -1,0 +1,43 @@
+[{
+    "id": 1,
+    "name": "JavaScript Basics",
+    "title": "Learn JS from zero to hero",
+    "price": "0",
+    "category": "free",
+    "image": "Banner.jpg"
+}, {
+    "id": 2,
+    "name": "React Guide",
+    "title": "Complete React tutorial",
+    "price": 299,
+    "category": "free",
+    "image": "Banner.jpg"
+}, {
+    "id": 3,
+    "name": "HTML & CSS",
+    "title": "Frontend fundamentals",
+    "price": "0",
+    "category": "free",
+    "image": "Banner.jpg"
+}, {
+    "id": 4,
+    "name": "Node.js Handbook",
+    "title": "Backend with Node",
+    "price": 199,
+    "category": "free",
+    "image": "Banner.jpg"
+}, {
+    "id": 3,
+    "name": "HTML & CSS",
+    "title": "Frontend fundamentals",
+    "price": "120",
+    "category": "free",
+    "image": "Banner.jpg"
+}, {
+    "id": 3,
+    "name": "HTML & CSS",
+    "title": "Frontend fundamentals",
+    "price": "0",
+    "category": "free",
+    "image": "Banner.jpg"
+}]
