@@ -2,25 +2,42 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Login from "./Login";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 
 const Signup = () => {
-   const {
-      register,
-      handleSubmit,
-      formState: { errors },
-    } = useForm();
-  
-    const onSubmit = (data) => {
-      console.log(data);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    const userInfo = {
+      fullname: data.fullname,
+      email: data.email,
+      password: data.password,
     };
-  
+
+    try {
+      const res = await axios.post(
+        "http://localhost:4001/user/signup",
+        userInfo
+      );
+
+       toast.success('Successfully toasted!')
+      console.log(res.data);
+      localStorage.setItem("users",JSON.stringify(res.data.user));
+    } catch (err) {
+      
+      toast.error('This is an error!'+err.message);
+    }
+  };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100 dark:bg-slate-900">
       <div className="relative w-[360px] border border-gray-300 p-6 rounded-lg shadow-lg bg-white dark:bg-slate-800">
-
-    
         <Link
           to="/"
           className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
@@ -32,70 +49,84 @@ const Signup = () => {
           Signup
         </h3>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="mb-4">
-          <label className="block mb-1 font-medium text-gray-800 dark:text-white">Name</label>
-          <input
-            type="text"
-            placeholder="Enter your name"
-            className="w-full px-3 py-2 border rounded-md outline-none focus:ring-2 focus:ring-pink-400"
-            {...register("name", { required: "Name is required" })}
-          />
-          {errors.name && (
-            <p className="text-red-500 text-sm">{errors.name.message}</p>
-          )}
-        </div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {/* Fullname */}
+          <div className="mb-4">
+            <label className="block mb-1 font-medium text-gray-800 dark:text-white">
+              Name
+            </label>
+            <input
+              type="text"
+              placeholder="Enter your fullname"
+              className="w-full px-3 py-2 border rounded-md outline-none focus:ring-2 focus:ring-pink-400"
+              {...register("fullname", { required: "Name is required" })}
+            />
+            {errors.fullname && (
+              <p className="text-red-500 text-sm">
+                {errors.fullname.message}
+              </p>
+            )}
+          </div>
 
-        {/* Email */}
-        <div className="mb-4">
-          <label className="block mb-1 font-medium text-gray-800 dark:text-white">Email</label>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="w-full px-3 py-2 border rounded-md outline-none focus:ring-2 focus:ring-pink-400"
-            {...register("email", { required: "Email is required" })}
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm">{errors.email.message}</p>
-          )}
-        </div>
+          {/* Email */}
+          <div className="mb-4">
+            <label className="block mb-1 font-medium text-gray-800 dark:text-white">
+              Email
+            </label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-full px-3 py-2 border rounded-md outline-none focus:ring-2 focus:ring-pink-400"
+              {...register("email", { required: "Email is required" })}
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email.message}</p>
+            )}
+          </div>
 
-        {/* Password */}
-        <div className="mb-5">
-          <label className="block mb-1 font-medium text-gray-800 dark:text-white">Password</label>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            className="w-full px-3 py-2 border rounded-md outline-none focus:ring-2 focus:ring-pink-400"
-            {...register("password", { required: "Password is required" })}
-          />
-          {errors.password && (
-            <p className="text-red-500 text-sm">{errors.password.message}</p>
-          )}
-        </div>
+          {/* Password */}
+          <div className="mb-5">
+            <label className="block mb-1 font-medium text-gray-800 dark:text-white">
+              Password
+            </label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              className="w-full px-3 py-2 border rounded-md outline-none focus:ring-2 focus:ring-pink-400"
+              {...register("password", { required: "Password is required" })}
+            />
+            {errors.password && (
+              <p className="text-red-500 text-sm">
+                {errors.password.message}
+              </p>
+            )}
+          </div>
 
-        {/* Actions */}
-        <div className="flex items-center justify-between">
-          <button className="bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-600 transition">
-            Signup
-          </button>
-
-          <p className="text-sm text-gray-800 dark:text-white">
-            Have an account?{" "}
+          {/* Actions */}
+          <div className="flex items-center justify-between">
             <button
-              className="text-blue-500 underline"
-              onClick={() =>
-                document.getElementById("my_modal_3").showModal()
-              }
+              type="submit"
+              className="bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-600 transition"
             >
-              Login
+              Signup
             </button>
-          </p>
-        </div>
 
-        {/* Login Modal */}
-        <Login />
-      </form>
+            <p className="text-sm text-gray-800 dark:text-white">
+              Have an account?{" "}
+              <button
+                type="button"
+                className="text-blue-500 underline"
+                onClick={() =>
+                  document.getElementById("my_modal_3").showModal()
+                }
+              >
+                Login
+              </button>
+            </p>
+          </div>
+
+          <Login />
+        </form>
       </div>
     </div>
   );

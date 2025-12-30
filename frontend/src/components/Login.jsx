@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import toast from "react-hot-toast";
+
 
 const Login = () => {
   const {
@@ -9,8 +12,29 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    const userInfo = {
+      
+          email: data.email,
+          password: data.password,
+        };
+    
+        try {
+          const res = await axios.post(
+            "http://localhost:4001/user/Login",
+            userInfo
+          );
+    
+          toast.success('Successfully toasted!')
+
+          console.log(res.data);
+          localStorage.setItem("users",JSON.stringify(res.data.user));
+        } catch (err) {
+      toast.error('This is an error!'+err.message);
+
+      
+        };
+    
   };
 
   return (

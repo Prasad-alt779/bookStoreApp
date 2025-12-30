@@ -1,0 +1,132 @@
+[{
+  "_id": {
+    "$oid": "695120aeaa3f8e9904266d52"
+  },
+  "id": 1,
+  "name": "JavaScript Basics",
+  "title": "Learn JS from zero to hero",
+  "price": "0",
+  "category": "free",
+  "image": "Banner.jpg"
+},
+{
+  "_id": {
+    "$oid": "695120aeaa3f8e9904266d53"
+  },
+  "id": 2,
+  "name": "React Guide",
+  "title": "Complete React tutorial",
+  "price": 299,
+  "category": "free",
+  "image": "Banner.jpg"
+},
+{
+  "_id": {
+    "$oid": "695120aeaa3f8e9904266d54"
+  },
+  "id": 3,
+  "name": "HTML & CSS",
+  "title": "Frontend fundamentals",
+  "price": "0",
+  "category": "free",
+  "image": "Banner.jpg"
+},
+{
+  "_id": {
+    "$oid": "695120aeaa3f8e9904266d55"
+  },
+  "id": 4,
+  "name": "Node.js Handbook",
+  "title": "Backend with Node",
+  "price": 199,
+  "category": "free",
+  "image": "Banner.jpg"
+},
+{
+  "_id": {
+    "$oid": "695120aeaa3f8e9904266d56"
+  },
+  "id": 3,
+  "name": "HTML & CSS",
+  "title": "Frontend fundamentals",
+  "price": "120",
+  "category": "free",
+  "image": "Banner.jpg"
+},
+{
+  "_id": {
+    "$oid": "695120aeaa3f8e9904266d57"
+  },
+  "id": 3,
+  "name": "HTML & CSS",
+  "title": "Frontend fundamentals",
+  "price": "0",
+  "category": "free",
+  "image": "Banner.jpg"
+},
+{
+  "_id": {
+    "$oid": "69513db4aa3f8e9904266d67"
+  },
+  "id": 1,
+  "name": "JavaScript Basics",
+  "title": "Learn JS from zero to hero",
+  "price": "0",
+  "category": "free",
+  "image": "Banner.jpg"
+},
+{
+  "_id": {
+    "$oid": "69513db4aa3f8e9904266d68"
+  },
+  "id": 2,
+  "name": "React Guide",
+  "title": "Complete React tutorial",
+  "price": 299,
+  "category": "free",
+  "image": "Banner.jpg"
+},
+{
+  "_id": {
+    "$oid": "69513db4aa3f8e9904266d69"
+  },
+  "id": 3,
+  "name": "HTML & CSS",
+  "title": "Frontend fundamentals",
+  "price": "0",
+  "category": "free",
+  "image": "Banner.jpg"
+},
+{
+  "_id": {
+    "$oid": "69513db4aa3f8e9904266d6a"
+  },
+  "id": 4,
+  "name": "Node.js Handbook",
+  "title": "Backend with Node",
+  "price": 199,
+  "category": "free",
+  "image": "Banner.jpg"
+},
+{
+  "_id": {
+    "$oid": "69513db4aa3f8e9904266d6b"
+  },
+  "id": 3,
+  "name": "HTML & CSS",
+  "title": "Frontend fundamentals",
+  "price": "120",
+  "category": "free",
+  "image": "Banner.jpg"
+},
+{
+  "_id": {
+    "$oid": "69513db4aa3f8e9904266d6c"
+  },
+  "id": 3,
+  "name": "HTML & CSS",
+  "title": "Frontend fundamentals",
+  "price": "0",
+  "category": "free",
+  "image": "Banner.jpg"
+}]
